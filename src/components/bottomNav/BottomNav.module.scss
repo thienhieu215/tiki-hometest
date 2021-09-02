@@ -1,0 +1,13 @@
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  .BottomNavigationAction {
+    text-decoration: none;
+    color: #81818A;
+  }
+  .BottomNavigationAction.selected {
+    text-decoration: none;
+    color: #FC820A;
+  }
+}

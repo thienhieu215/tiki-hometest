@@ -65,7 +65,7 @@ const FlashSaleTimeTabs = () => {
         <TabPanel key={index} value={currentTab} index={index}>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
             {flashSaleProds.map((product, index) => (
-              <ProductCard productInfo={product} />
+              <ProductCard productInfo={product} vertical={false}/>
             ))}
           </div>
         </TabPanel>

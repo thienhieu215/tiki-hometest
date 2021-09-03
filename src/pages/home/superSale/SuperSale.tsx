@@ -1,10 +1,31 @@
 import React, { useEffect, useState } from "react";
-import Carousel from 'react-bootstrap/Carousel'
 import { getUniqueSaleBooksAPI } from '../../../components/api'
 import ProductCard from "../prodCard/ProdCard";
 import { Product } from '../../../components/interface'
 import style from "./SuperSale.module.scss";
+import Slider from "react-slick";
+import RemoveIcon from '@material-ui/icons/Remove';
 
+const settings = {
+  className: `${style.superSale}`,
+  arrows: false,
+  centerMode: true,
+  infinite: false,
+  dots: true,
+  dotsClass: `${style.dotsClass} slick-dots`,
+  centerPadding: "16px",
+  slidesToShow: 1,
+  speed: 500,
+  responsive: [
+    {
+      breakpoint: 425,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+};
 
 const SuperSale = () => {
 
@@ -15,29 +36,23 @@ const SuperSale = () => {
     setProdList(result.data.data)
   }
 
+  let carouselItem = []
+  for (let i = 0; i < prodList.length; i++) {
+    carouselItem.push(
+      <ProductCard productInfo={prodList[i]} vertical={true} />
+    )
+  }
+
   useEffect(() => {
     getUniqueSaleProds()
   }, [])
 
-  let carouselItem = []
-  for (let i = 0; i < prodList.length; i++) {
-    carouselItem.push(
-      <Carousel.Item>
-        <div>
-          <ProductCard productInfo={prodList[i]} />
-        </div>
-      </Carousel.Item>
-    )
-  }
-
   return (
-    <>
-      <div >
-        <Carousel className={style.carouselContainer} controls={false}>
-          {carouselItem}
-        </Carousel>
-      </div>
-    </>
+    <div>
+      <Slider {...settings}>
+        {carouselItem}
+      </Slider>
+    </div>
   )
 }
 

@@ -6,7 +6,7 @@ import { addToCart } from '../../../store/slices/CartSlice'
 import StarRating from './StarRating';
 
 
-const ProductCard = ({ productInfo }: ProductCardProps) => {
+const ProductCard = ({ productInfo, vertical }: ProductCardProps) => {
 
   const dispatch = useDispatch()
 
@@ -16,7 +16,7 @@ const ProductCard = ({ productInfo }: ProductCardProps) => {
   }
 
   return (
-    <div className={style.prodCard} onClick={() => addItemToCart(productInfo)}>
+    <div className={vertical ? style.YprodCard : style.XprodCard} onClick={() => addItemToCart(productInfo)}>
       <div className={style.thumbnail}>
         <img className={style.img} src={productInfo.thumbnail_url} />
         {productInfo.badges_new[1] &&
@@ -53,7 +53,8 @@ const ProductCard = ({ productInfo }: ProductCardProps) => {
 }
 
 type ProductCardProps = {
-  productInfo: Product
+  productInfo: Product,
+  vertical: boolean
 }
 
 export default ProductCard

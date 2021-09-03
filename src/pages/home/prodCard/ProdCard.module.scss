@@ -2,10 +2,10 @@
   width: 160px;
   background-color: #ffffff;
   margin-bottom: 8px;
-  border-radius: 4px;
+  border-radius: 4px 4px;
   .thumbnail {
-    height: 160px;
-    width: 160px;
+    height: 150px;
+    width: 150px;
     display: inline-block;
     position: relative;
     .freeShipLabel {
@@ -60,6 +60,27 @@
       line-height: 16px;
       color: #808089;
       text-decoration-line: line-through;
+    }
+  }
+}
+
+.starRating {
+  display: flex;
+  // font-size: 8px;
+  .backStars {
+    display: flex;
+    color: #C4C4CF;
+    position: relative;
+    font-size: 8px;
+    .star {
+      font-size: 10px;
+    }
+    .frontStars {
+      display: flex;
+      color: #FFC400;
+      overflow: hidden;
+      position: absolute;
+      font-size: 8px;
     }
   }
 }

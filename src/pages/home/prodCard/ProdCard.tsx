@@ -3,6 +3,7 @@ import style from './ProdCard.module.scss'
 import { useDispatch } from "react-redux";
 import { Product, CartItem } from '../../../components/interface';
 import { addToCart } from '../../../store/slices/CartSlice'
+import StarRating from './StarRating';
 
 
 const ProductCard = ({ productInfo }: ProductCardProps) => {
@@ -36,7 +37,8 @@ const ProductCard = ({ productInfo }: ProductCardProps) => {
         }
         <div className={style.prodName}>{productInfo.name}</div>
         <div style={{ display: 'flex' }}>
-          <div>{productInfo.rating_average}</div>
+          <StarRating rate={productInfo.rating_average}/>
+          {/* <div>{}</div> */}
           &nbsp;
           <div className={style.reviewCount}>({productInfo.review_count})</div>
         </div>

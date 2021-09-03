@@ -1,0 +1,9 @@
+.carouselContainer {
+  width: 60%;
+  margin: auto;
+  overflow: hidden;
+  .carouselSlide {
+    display: flex;
+    width: 100%;
+  }
+}

@@ -3,6 +3,7 @@ import { getBannersAPI } from "../../../components/api";
 import Carousel from 'react-bootstrap/Carousel'
 import { Banner } from '../../../components/interface'
 
+
 const Banners = () => {
 
   const [banners, setBanners] = useState<Array<Banner>>([])
@@ -28,7 +29,7 @@ const Banners = () => {
   return (
     <>
       <Carousel controls={false}>
-        {carouselItem}
+          {carouselItem}
       </Carousel>
     </>
   )

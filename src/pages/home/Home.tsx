@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { Product, CartItem } from '../../components/interface';
 import { TStore } from "../../store/store";
 import { useSelector } from "react-redux";
+import SuperSale from './superSale/SuperSale';
 
 
 const Home = () => {
@@ -15,10 +16,11 @@ const Home = () => {
 
   console.log(items, 'cart')
   return (
-    <div style={{ backgroundColor: '#FCF4DD', marginBottom: '56px' }}>
+    <div style={{ minHeight: '100vw', backgroundColor: '#FCF4DD', marginBottom: '56px' }}>
       <div style={{ height: '56px' }}></div>
       <Banners />
       <UniqueSale />
+      <SuperSale />
       <FlashSale />
     </div>
   )

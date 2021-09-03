@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -19,16 +19,22 @@ const styles = {
 
 const BottomNav = () => {
 
-  const [value, setValue] = useState<Number>(0)
+  const [currentPage, setCurrentPage] = useState<Number>()
+
+  useEffect(() => {
+    if (window.location.pathname === '/') {
+      setCurrentPage(0)
+    } else if (window.location.pathname === '/order') {
+      setCurrentPage(1)
+    }
+  })
 
   return (
     <>
       <BottomNavigation
         className={style.bottomNav}
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
+        value={currentPage}
+        onChange={(event, newValue) => { setCurrentPage(newValue) }}
         showLabels
       >
         <BottomNavigationAction classes={{ root: style.BottomNavigationAction, selected: style.selected }} component={Link} to="/" label="Trang chủ" icon={<HomeIcon />} />

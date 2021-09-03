@@ -17,11 +17,10 @@ const UniqueSale = () => {
     getUniqueSaleProds()
   }, [])
 
-  console.log(prodList)
   return (
     <>
       <div className={style.blockTitle}>SALE ĐỘC NHẤT</div>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
+      <div style={{ margin: '0px 16px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
         {prodList.map((product, index) => (
           <ProductCard productInfo={product} />
         ))}

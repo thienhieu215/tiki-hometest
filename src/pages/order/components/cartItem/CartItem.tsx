@@ -4,9 +4,7 @@ import ClearIcon from '@material-ui/icons/Clear';
 import { CartItem } from '../../../../components/interface';
 import style from './CartItem.module.scss'
 
-const ItemInCart = ({ productInfo, increase, reduce,
-  // showRemove
-}: ItemInCartProps) => {
+const ItemInCart = ({ productInfo, increase, reduce, showRemove }: ItemInCartProps) => {
 
   const priceToString = (price: number): string => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
@@ -28,7 +26,7 @@ const ItemInCart = ({ productInfo, increase, reduce,
               </div>
               <div className={style.btnGroup}>
                 <div className={style.reduceBtn}>
-                <RemoveIcon className={style.reduce} onClick={() => reduce(productInfo)} />
+                  <RemoveIcon className={style.reduce} onClick={() => reduce(productInfo)} />
                 </div>
                 &nbsp;
                 <div className={style.quantityBtn}>
@@ -42,7 +40,7 @@ const ItemInCart = ({ productInfo, increase, reduce,
             </div>
           </div>
           <div className={style.removeItem}>
-            <ClearIcon className={style.icon} />
+            <ClearIcon className={style.icon} onClick={() => showRemove(productInfo)}/>
           </div>
         </div>
         <hr className={style.seperator} />
@@ -55,7 +53,7 @@ type ItemInCartProps = {
   productInfo: CartItem,
   increase: (e: CartItem) => void,
   reduce: (e: CartItem) => void,
-  // showRemove: (e: CartItem) => void
+  showRemove: (e: CartItem) => void
 }
 
 export default ItemInCart

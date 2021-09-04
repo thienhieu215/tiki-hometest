@@ -20,7 +20,6 @@ const cartSlice = createSlice({
   reducers: {
 
     addToCart: (state, { payload }: PayloadAction<CartItem>) => {
-      console.log(payload.id, "payload")
       if (state.cartItems.length === 0) {
         state.cartItems = [payload]
       } else {
@@ -62,14 +61,8 @@ const cartSlice = createSlice({
       // localStorage.setItem('numbItems', JSON.stringify(state.numbOfItems))
     },
 
-    clearCart: (state) => {
-      state.cartItems.splice(0, state.cartItems.length)
-      state.numbOfItems = 0
-      // localStorage.setItem('cart', JSON.stringify(state.cartItems.length > 0 ? state.cartItems : []))
-      // localStorage.setItem('numbItems', JSON.stringify(state.numbOfItems))
-    },
   }
 });
 
 export const cartReducer = cartSlice.reducer;
-export const { addToCart, increase, reduce, removeFromCart, clearCart } = cartSlice.actions;
+export const { addToCart, increase, reduce, removeFromCart } = cartSlice.actions;

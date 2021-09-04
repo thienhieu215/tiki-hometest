@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getBannersAPI } from "../../../components/api";
 import Carousel from 'react-bootstrap/Carousel'
 import { Banner } from '../../../components/interface'
@@ -29,7 +29,7 @@ const Banners = () => {
   return (
     <>
       <Carousel controls={false}>
-          {carouselItem}
+        {carouselItem}
       </Carousel>
     </>
   )

@@ -1,10 +1,8 @@
-import React from 'react'
-import { Row, Col } from 'react-bootstrap'
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import ClearIcon from '@material-ui/icons/Clear';
-import { Product, CartItem } from '../../../components/interface';
-import style from './Cart.module.scss'
+import { CartItem } from '../../../../components/interface';
+import style from './CartItem.module.scss'
 
 const ItemInCart = ({ productInfo, increase, reduce,
   // showRemove

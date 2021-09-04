@@ -1,4 +1,3 @@
-
 .XprodCard {
   width: 160px;
   background-color: #ffffff;
@@ -26,14 +25,24 @@
   .info {
     margin: 8px 8px;
     text-align: left;
-    .tikiNowLabel {
+    .tikiNow {
+      margin-bottom: 8px;
     }
     .prodName {
       line-height: 16px;
       font-size: 12px;
       font-weight: 400;
+      word-break: break-word;
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
     .reviewCount {
+      display: flex;
+      align-items: center;
       font-weight: normal;
       font-size: 10px;
       line-height: 12px;
@@ -75,10 +84,10 @@
   .thumbnail {
     display: flex;
     align-items: center;
-    height: 150px;
-    width: 150px;
-    display: inline-block;
+    height: 140px;
+    width: 140px;
     position: relative;
+    margin: 8px 8px;
     .freeShipLabel {
       bottom: 0px;
       left: 0px;
@@ -96,14 +105,24 @@
   .info {
     margin: 8px 8px;
     text-align: left;
-    .tikiNowLabel {
+    .tikiNow {
+      margin-bottom: 8px;
     }
     .prodName {
       line-height: 16px;
       font-size: 12px;
       font-weight: 400;
+      word-break: break-word;
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
     .reviewCount {
+      display: flex;
+      align-items: center;
       font-weight: normal;
       font-size: 10px;
       line-height: 12px;
@@ -137,10 +156,10 @@
 
 .starRating {
   display: flex;
-  // font-size: 8px;
   .backStars {
     display: flex;
-    color: #C4C4CF;
+    align-items: center;
+    color: #c4c4cf;
     position: relative;
     font-size: 8px;
     .star {
@@ -148,7 +167,7 @@
     }
     .frontStars {
       display: flex;
-      color: #FFC400;
+      color: #ffc400;
       overflow: hidden;
       position: absolute;
       font-size: 8px;

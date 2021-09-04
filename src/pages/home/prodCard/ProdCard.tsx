@@ -1,14 +1,17 @@
-import React from 'react'
-import style from './ProdCard.module.scss'
 import { useDispatch } from "react-redux";
 import { Product, CartItem } from '../../../components/interface';
 import { addToCart } from '../../../store/slices/CartSlice'
 import StarRating from './StarRating';
+import style from './ProdCard.module.scss'
 
 
 const ProductCard = ({ productInfo, vertical }: ProductCardProps) => {
 
   const dispatch = useDispatch()
+
+  const priceToString = (price: number): string => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+  }
 
   const addItemToCart = (product: Product): void => {
     let obj: CartItem = { ...product, quantity: 1 }
@@ -29,7 +32,7 @@ const ProductCard = ({ productInfo, vertical }: ProductCardProps) => {
       <div className={style.info}>
         {productInfo.badges_new[0] &&
           <div>
-            <img className={style.tikiNowLabel}
+            <img className={style.tikiNow}
               width={productInfo.badges_new[0].icon_width}
               height={productInfo.badges_new[0].icon_height}
               src={productInfo.badges_new[0].icon} />
@@ -37,16 +40,15 @@ const ProductCard = ({ productInfo, vertical }: ProductCardProps) => {
         }
         <div className={style.prodName}>{productInfo.name}</div>
         <div style={{ display: 'flex' }}>
-          <StarRating rate={productInfo.rating_average}/>
-          {/* <div>{}</div> */}
+          <StarRating rate={productInfo.rating_average} />
           &nbsp;
           <div className={style.reviewCount}>({productInfo.review_count})</div>
         </div>
         <div style={{ display: 'flex' }}>
-          <div className={style.price}>{productInfo.price} đ</div>
+          <div className={style.price}>{priceToString(productInfo.price)} đ</div>
           <div className={style.sale}>-{productInfo.discount_rate}%</div>
         </div>
-        <div className={style.oldPrice}>{productInfo.list_price} đ</div>
+        <div className={style.oldPrice}>{priceToString(productInfo.list_price)} đ</div>
       </div>
     </div>
   )

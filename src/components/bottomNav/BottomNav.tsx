@@ -1,21 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import { useEffect, useState } from 'react';
+import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import HomeIcon from '@material-ui/icons/Home';
 import { Link } from 'react-router-dom';
 import style from './BottomNav.module.scss'
-import { withStyles } from "@material-ui/core/styles";
 
-const styles = {
-  root: {
-    color: "#81818A",
-    "&$selected": {
-      color: "#FC820A"
-    }
-  },
-  selected: {}
-};
 
 const BottomNav = () => {
 
@@ -27,7 +16,7 @@ const BottomNav = () => {
     } else if (window.location.pathname === '/order') {
       setCurrentPage(1)
     }
-  })
+  }, [])
 
   return (
     <>
@@ -44,4 +33,4 @@ const BottomNav = () => {
   )
 }
 
-export default withStyles(styles)(BottomNav);
+export default BottomNav;

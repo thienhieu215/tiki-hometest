@@ -1,0 +1,17 @@
+.orderSummary {
+  .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    outline: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #28282b;
+    .price {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      color: #28282b;
+    }
+  }
+}

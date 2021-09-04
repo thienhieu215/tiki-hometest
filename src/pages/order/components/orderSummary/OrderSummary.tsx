@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import style from './Cart.module.scss'
+import style from './OrderSummary.module.scss'
 
 const OrderSummary = ({ totalPricesWithShipping, totalPrices, shipping }: OrderSummaryProps) => {
 

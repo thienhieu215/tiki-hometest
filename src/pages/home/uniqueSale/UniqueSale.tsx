@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Product } from '../../../components/interface'
 import { getUniqueSaleBooksAPI } from '../../../components/api'
 import ProductCard from '../prodCard/ProdCard'
@@ -22,7 +22,7 @@ const UniqueSale = () => {
       <div className={style.blockTitle}>SALE ĐỘC NHẤT</div>
       <div style={{ margin: '0px 16px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
         {prodList.map((product, index) => (
-          <ProductCard productInfo={product} vertical={false}/>
+          <ProductCard productInfo={product} vertical={false} />
         ))}
       </div>
     </>

@@ -1,0 +1,12 @@
+.appBar {
+  margin-bottom: 20px;
+  .tabs {
+    background-color: #FCF4DD;
+  }
+}
+
+.tabPanel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

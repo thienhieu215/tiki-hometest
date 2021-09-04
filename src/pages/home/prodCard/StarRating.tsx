@@ -1,6 +1,5 @@
-import React from 'react'
-import style from './ProdCard.module.scss'
 import StarRateIcon from '@material-ui/icons/StarRate';
+import style from './ProdCard.module.scss'
 
 const StarRating = ({rate}: StarRatingProps) => {
 
@@ -8,18 +7,18 @@ const StarRating = ({rate}: StarRatingProps) => {
     <>
       <div className={style.starRating}>
         <div className={style.backStars}>
-          <i aria-hidden="true"><StarRateIcon className={style.star}/></i>
-          <i aria-hidden="true"><StarRateIcon className={style.star}/></i>
-          <i aria-hidden="true"><StarRateIcon className={style.star}/></i>
-          <i aria-hidden="true"><StarRateIcon className={style.star}/></i>
-          <i aria-hidden="true"><StarRateIcon className={style.star}/></i>
+          <StarRateIcon className={style.star}/>
+          <StarRateIcon className={style.star}/>
+          <StarRateIcon className={style.star}/>
+          <StarRateIcon className={style.star}/>
+          <StarRateIcon className={style.star}/>
 
           <div className={style.frontStars} style={{width: `${rate*20}%`}}>
-            <i aria-hidden="true"><StarRateIcon className={style.star}/></i>
-            <i aria-hidden="true"><StarRateIcon className={style.star}/></i>
-            <i aria-hidden="true"><StarRateIcon className={style.star}/></i>
-            <i aria-hidden="true"><StarRateIcon className={style.star}/></i>
-            <i aria-hidden="true"><StarRateIcon className={style.star}/></i>
+            <StarRateIcon className={style.star}/>
+            <StarRateIcon className={style.star}/>
+            <StarRateIcon className={style.star}/>
+            <StarRateIcon className={style.star}/>
+            <StarRateIcon className={style.star}/>
           </div>
         </div>
       </div>

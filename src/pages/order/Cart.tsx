@@ -1,21 +1,20 @@
-import React from 'react';
+import { useState } from 'react';
 import { TStore } from "../../store/store";
 import { useDispatch, useSelector } from "react-redux";
 import { increase, reduce, removeFromCart, clearCart } from '../../store/slices/CartSlice'
-import ItemInCart from './components/CartItem';
-import OrderSummary from './components/OrderSummary';
-import TotalPrice from './components/TotalPrice';
-import { Product, CartItem } from '../../components/interface';
-import style from './components/Cart.module.scss'
+import ItemInCart from './components/cartItem/CartItem';
+import OrderSummary from './components/orderSummary/OrderSummary';
+import TotalPrice from './components/totalPrice/TotalPrice';
+import { CartItem } from '../../components/interface';
+import style from './Cart.module.scss'
 
 
 const Order = () => {
 
-  const [openDialogRemove, setOpenDialogRemove] = React.useState<boolean>(false);
+  const [openDialogRemove, setOpenDialogRemove] = useState<boolean>(false);
 
   const dispatch = useDispatch()
   const items: Array<CartItem> = useSelector((state: TStore) => state.cartReducer.cartItems);
-  const numbItems: number = useSelector((state: TStore) => state.cartReducer.numbOfItems);
   const shipping: number = useSelector((state: TStore) => state.cartReducer.shipping);
 
   const calculateTotalPrices = (): number => {

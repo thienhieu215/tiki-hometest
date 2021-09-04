@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { useMediaQuery } from 'react-responsive';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -8,7 +6,6 @@ import BottomNav from './components/bottomNav/BottomNav';
 
 function App() {
 
-  const bigScreen = useMediaQuery({ query: '(min-width: 769px)' })
   const mobileTablet = useMediaQuery({ query: '(max-width: 769px)' })
 
   return (

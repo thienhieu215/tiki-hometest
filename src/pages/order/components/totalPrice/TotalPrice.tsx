@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import style from './Cart.module.scss'
+import style from './TotalPrice.module.scss'
 
 const TotalPrice = ({ totalPrices }: TotalPriceProps) => {
 
   return (
-    <div className={style.mobileTotalPrice}>
+    <div className={style.totalPrice}>
       <div className={style.total}>
         <div className={style.title}>Tổng cộng</div>
         <div className={style.price}>{totalPrices} đ</div>
       </div>
-      <hr className={style.seperator}/>
+      <hr className={style.seperator} />
       <button className={style.checkoutBtn}>Thanh toán</button>
     </div>
   );

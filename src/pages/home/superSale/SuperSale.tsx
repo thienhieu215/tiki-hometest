@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getUniqueSaleBooksAPI } from '../../../components/api'
 import ProductCard from "../prodCard/ProdCard";
 import { Product } from '../../../components/interface'
-import style from "./SuperSale.module.scss";
+import slideStyle from "./SuperSale.module.scss";
 import Slider from "react-slick";
-import RemoveIcon from '@material-ui/icons/Remove';
 
 const settings = {
-  className: `${style.superSale}`,
+  className: `${slideStyle.slide}`,
   arrows: false,
   centerMode: true,
   infinite: false,
   dots: true,
-  dotsClass: `${style.dotsClass} slick-dots`,
+  dotsClass: `${slideStyle.dotsClass} slick-dots`,
   centerPadding: "16px",
   slidesToShow: 1,
   speed: 500,
@@ -48,7 +47,8 @@ const SuperSale = () => {
   }, [])
 
   return (
-    <div>
+    <div className={slideStyle.superSale}>
+      <div className={slideStyle.title}>SIÊU SALE</div>
       <Slider {...settings}>
         {carouselItem}
       </Slider>

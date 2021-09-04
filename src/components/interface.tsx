@@ -66,7 +66,7 @@ export interface Product {
   inventory: {
     fulfillment_type: string
   },
-  url_attendant_input_form: string, 
+  url_attendant_input_form: string,
   option_color: Array<any>,
   stock_item: {
     max_sale_qty: number,

@@ -1,12 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CartItem } from "../../components/interface";
 
-// const storage = JSON.parse(localStorage.getItem('cart') || '[]')
-// const numb = JSON.parse(localStorage.getItem('numbItems') || '0')
-
-const storage: Array<CartItem> = []
-const numbOfProds: number = 0
+// use local storage for not losing state when reload
+const storage: Array<CartItem> = JSON.parse(localStorage.getItem('cart') || '[]')
+const numbOfProds: number = JSON.parse(localStorage.getItem('numbItems') || '0')
 const shippingPrice: number = 15000
+
+//  using this will lost the state when reload
+// const storage: Array<CartItem> = []
+// const numbOfProds: number = 0
+// const shippingPrice: number = 15000
 
 const initialState = {
   cartItems: storage,
@@ -31,7 +34,7 @@ const cartSlice = createSlice({
         }
       }
       state.numbOfItems += payload.quantity
-      // localStorage.setItem('cart', JSON.stringify(state.cartItems.length > 0 ? state.cartItems : []))
+      localStorage.setItem('cart', JSON.stringify(state.cartItems.length > 0 ? state.cartItems : []))
       // localStorage.setItem('numbItems', JSON.stringify(state.numbOfItems))
     },
 
@@ -39,7 +42,7 @@ const cartSlice = createSlice({
       let indexOfItem = state.cartItems.findIndex((item: { id: number; }) => item.id === payload.id)
       state.cartItems[indexOfItem].quantity = state.cartItems[indexOfItem].quantity + 1
       state.numbOfItems += 1
-      // localStorage.setItem('cart', JSON.stringify(state.cartItems.length > 0 ? state.cartItems : []))
+      localStorage.setItem('cart', JSON.stringify(state.cartItems.length > 0 ? state.cartItems : []))
       // localStorage.setItem('numbItems', JSON.stringify(state.numbOfItems))
     },
 
@@ -49,7 +52,7 @@ const cartSlice = createSlice({
         state.cartItems[indexOfItem].quantity = state.cartItems[indexOfItem].quantity - 1
         state.numbOfItems -= 1
       }
-      // localStorage.setItem('cart', JSON.stringify(state.cartItems.length > 0 ? state.cartItems : []))
+      localStorage.setItem('cart', JSON.stringify(state.cartItems.length > 0 ? state.cartItems : []))
       // localStorage.setItem('numbItems', JSON.stringify(state.numbOfItems))
     },
 
@@ -57,7 +60,7 @@ const cartSlice = createSlice({
       let indexOfItem = state.cartItems.findIndex((item: { id: number; }) => item.id === payload.id)
       state.numbOfItems -= payload.quantity
       state.cartItems.splice(indexOfItem, 1)
-      // localStorage.setItem('cart', JSON.stringify(state.cartItems.length > 0 ? state.cartItems : []))
+      localStorage.setItem('cart', JSON.stringify(state.cartItems.length > 0 ? state.cartItems : []))
       // localStorage.setItem('numbItems', JSON.stringify(state.numbOfItems))
     },
 

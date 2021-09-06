@@ -1,3 +1,5 @@
+//  all interfaces are declared here
+
 export interface TabPanelProps {
   children?: React.ReactNode;
   index: any;

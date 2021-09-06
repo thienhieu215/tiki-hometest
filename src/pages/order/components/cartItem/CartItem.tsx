@@ -15,10 +15,10 @@ const ItemInCart = ({ productInfo, increase, reduce, showRemove }: ItemInCartPro
       <div className={style.card}>
         <div className={style.prod}>
           <div className={style.itemInfo}>
-            <img className={style.img} src={productInfo.thumbnail_url} />
+            <img className={style.img} src={productInfo.thumbnail_url} alt={productInfo.name} />
             <div className={style.prodInfo}>
               <h4 className={style.title}>
-                <a>{productInfo.name}</a>
+                <div>{productInfo.name}</div>
               </h4>
               <div className={style.allPrice}>
                 <div className={style.price}>{priceToString(productInfo.price)} đ</div>
@@ -40,7 +40,7 @@ const ItemInCart = ({ productInfo, increase, reduce, showRemove }: ItemInCartPro
             </div>
           </div>
           <div className={style.removeItem}>
-            <ClearIcon className={style.icon} onClick={() => showRemove(productInfo)}/>
+            <ClearIcon className={style.icon} onClick={() => showRemove(productInfo)} />
           </div>
         </div>
         <hr className={style.seperator} />

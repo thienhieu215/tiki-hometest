@@ -17,7 +17,7 @@ const Banners = () => {
   for (let i = 0; i < banners.length; i++) {
     carouselItem.push(
       <Carousel.Item>
-        <img className="d-block w-100" src={banners[i].mobile_url} alt="Slide" />
+        <img className="d-block w-100" src={banners[i].mobile_url} alt="item slide" />
       </Carousel.Item>
     )
   }

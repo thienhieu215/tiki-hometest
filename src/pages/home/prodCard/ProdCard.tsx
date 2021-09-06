@@ -30,12 +30,12 @@ const ProductCard = ({ productInfo, vertical }: ProductCardProps) => {
       />
       <div className={vertical ? style.YprodCard : style.XprodCard} onClick={() => addItemToCart(productInfo)}>
         <div className={style.thumbnail}>
-          <img className={style.img} src={productInfo.thumbnail_url} />
+          <img className={style.img} src={productInfo.thumbnail_url} alt={style.prodName} />
           {productInfo.badges_new[1] &&
             <img className={style.freeShipLabel}
               width={productInfo.badges_new[1].icon_width}
               height={productInfo.badges_new[1].icon_height}
-              src={productInfo.badges_new[1].icon} />
+              src={productInfo.badges_new[1].icon} alt={productInfo.badges_new[1].code} />
           }
         </div>
         <div className={style.info}>
@@ -44,7 +44,7 @@ const ProductCard = ({ productInfo, vertical }: ProductCardProps) => {
               <img className={style.tikiNow}
                 width={productInfo.badges_new[0].icon_width}
                 height={productInfo.badges_new[0].icon_height}
-                src={productInfo.badges_new[0].icon} />
+                src={productInfo.badges_new[0].icon} alt={productInfo.badges_new[0].code} />
             </div>
           }
           <div className={style.prodName}>{productInfo.name}</div>
